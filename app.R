@@ -4,10 +4,11 @@
 library(shiny)
 library(devtools)  # ou library(remotes)
 library(cqn)
+library(attempt)
 #
 # # Instalar pacote do GitHub
-if (!require("consexpressionR", quietly = TRUE))
-  devtools::install_github("costasilvati/consexpressionR")
+#if (!require("consexpressionR", quietly = TRUE))
+devtools::install_github("costasilvati/consexpressionR")
 #
 # # Carregar o pacote
 library(consexpressionR)

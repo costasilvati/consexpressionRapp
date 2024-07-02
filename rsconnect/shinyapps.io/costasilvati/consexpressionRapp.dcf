@@ -5,7 +5,7 @@ account: costasilvati
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 12264273
-bundleId: 8815038
+bundleId: 8815125
 url: https://costasilvati.shinyapps.io/consexpressionRapp/
 version: 1
 asMultiple: FALSE
