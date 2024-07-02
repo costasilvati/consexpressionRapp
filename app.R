@@ -16,18 +16,6 @@ library(consexpressionR)
 ui <- function(){
   shiny::fluidPage(
     shiny::tags$style(
-      ".well-panel-tools{
-          min-height:600px;
-      }
-      .well-panel-tools2{
-        min-height:630px;
-      }
-      .center{
-        margin-left:8%;
-        margin-top:2%;
-      }
-      "
-
     ),
     shiny::fluidRow(
       shiny::h1("consexpressionR", shiny::span("R", style = "font-weight: 200"),
@@ -455,6 +443,7 @@ ui <- function(){
 
 # Define server logic required to draw a histogram
 server <- function(input, output, session) {
+  rsconnect::configureApp("consexpressionRapp", size="xlarge")
   options(shiny.maxRequestSize=30*1024^2)
   consResult <- shiny::reactiveValues()
   deByTool <- NULL
@@ -542,6 +531,7 @@ server <- function(input, output, session) {
                                     rDataFrameCount = datasetCount(),
                                     groupName = groupsName,
                                     experimentName=input$experimentNameInp,
+                                    printResults = FALSE,
                                     methodNormLimma = input$methNormLimmaInp,
                                     methodAdjPvalueLimma = input$adjPvalueLimma,
                                     numberTopTableLimma = input$topTableLimmaInp,
